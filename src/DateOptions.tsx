@@ -27,27 +27,30 @@ export const DateOptions = ()=>{
   ]
   return selectedGift? 
     <SelectedGift selectedDateOption={dateOption!} />
-    : <div className='date-options flex gap-2'>
-    <motion.img 
-      initial={{opacity:0,translateY:'100%'}} 
-      animate={{opacity:1,translateY:0}} 
-      onClick={()=>giftClickedHandler(dateOptions[0])} 
-      src={giftBox} 
-      className='sm:w-40 w-24 cursor-pointer hover:scale-105 duration-500' 
-      alt="gift box" />
-    <motion.img  
-      initial={{opacity:0,translateY:'100%'}} 
-      animate={{opacity:1,translateY:0}} 
-      onClick={()=>giftClickedHandler(dateOptions[1])} 
-      src={giftBox} 
-      className='sm:w-40 w-24 cursor-pointer hover:scale-105 duration-500 delay-300' 
-      alt="gift box" />
-    <motion.img  
-      initial={{opacity:0,translateY:'100%'}} 
-      animate={{opacity:1,translateY:0}} 
-      onClick={()=>giftClickedHandler(dateOptions[2])} 
-      src={giftBox} 
-      className='sm:w-40 w-24 cursor-pointer hover:scale-105 duration-500 delay-500' 
-      alt="gift box" />
-  </div>
+    : <div className="date-option-wraper">
+      <motion.h1 initial={{opacity:0}} animate={{opacity:100}} className='text-4xl text-center py-4'>Pick one</motion.h1>
+      <div className='date-options flex gap-2'>
+      <motion.img
+        initial={{opacity:0,translateY:'100%'}}
+        animate={{opacity:1,translateY:0}}
+        onClick={()=>giftClickedHandler(dateOptions[0])}
+        src={giftBox}
+        className='sm:w-40 w-24 cursor-pointer hover:scale-105 duration-500'
+        alt="gift box" />
+      <motion.img
+        initial={{opacity:0,translateY:'100%'}}
+        animate={{opacity:1,translateY:0}}
+        onClick={()=>giftClickedHandler(dateOptions[1])}
+        src={giftBox}
+        className='sm:w-40 w-24 cursor-pointer hover:scale-105 duration-500 delay-300'
+        alt="gift box" />
+      <motion.img
+        initial={{opacity:0,translateY:'100%'}}
+        animate={{opacity:1,translateY:0}}
+        onClick={()=>giftClickedHandler(dateOptions[2])}
+        src={giftBox}
+        className='sm:w-40 w-24 cursor-pointer hover:scale-105 duration-500 delay-500'
+        alt="gift box" />
+        </div>
+    </div>
 }
